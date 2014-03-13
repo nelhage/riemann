@@ -1235,7 +1235,12 @@
            (test-stream-intervals
              (rollup 1 2)
              [:a 0 :b 0 :c 2 :d 0 :e 0 :f 2]
-             [[:a] [:b :c] [:d :e :f]]))
+             [[:a] [:b :c] [:d :e :f]])
+
+           (test-stream-intervals
+             (rollup 1 2)
+             [:a 0 :b 0 :c 10 :d 0 :e 0 :f 2]
+             [[:a] [:b :c] [:d] [:e :f]]))
 
          (testing "basic rollups"
                   (test-stream-intervals 
